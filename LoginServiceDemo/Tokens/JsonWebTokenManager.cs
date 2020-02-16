@@ -13,12 +13,8 @@ namespace LoginServiceDemo.Models
 {
     public class TokenManager
     {
-        // HMACSHA256 generated secret key required for encryption and decryption
-        // To do: store in the Key Vault for Azure implementation
-        private static string Secret = "ALLWORKANDNOPLAYMAKESJACKADULLBOY123";
-
-        // Token genaration method where a token is created and a string version of it returned
-        public static string GenerateToken(string username)
+        // Token genaration method where a token is created with the username imbedded and a string version returned
+        public static string GenerateToken(string username, string secret)
         {
             /// <summary>
             /// Token genaration method where a token is created and a string version of it returned.
@@ -31,7 +27,7 @@ namespace LoginServiceDemo.Models
             /// payload property with code like: token.Payload["NicksFavouriteFood"] = "Huel";
             /// </summary>
 
-            byte[] key = Convert.FromBase64String(Secret);
+            byte[] key = Convert.FromBase64String(secret);
             SymmetricSecurityKey securityKey = new SymmetricSecurityKey(key);
             SecurityTokenDescriptor descriptor = new SecurityTokenDescriptor
             {
