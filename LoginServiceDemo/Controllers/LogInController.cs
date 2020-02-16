@@ -18,8 +18,6 @@ namespace LoginServiceDemo.Controllers
         /// add the application ID and return to the calling application
         /// </summary>
 
-        
-
         [HttpPost]
         [WebAPI.Authentication.BearerAuthentication]
         public HttpResponseMessage Login()
