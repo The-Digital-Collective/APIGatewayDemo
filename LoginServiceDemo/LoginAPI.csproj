@@ -102,10 +102,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Tokens\JsonWebTokenManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\UserRepository.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="Tokens\JsonWebTokenManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
